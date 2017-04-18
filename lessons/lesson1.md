@@ -60,3 +60,11 @@ git commit -m "Added my favorite programming language"
 ```
 
 Good work! Now you should have a file called `bio.txt` with your name, your department/program and your favorite programming language, along with a couple of commits recording these changes. Next time we'll see how to combine these changes with those of other people and generally build up a collaborative workflow using git.
+
+## Getting back to an older version of a file
+
+For now, this `studygroup-git` repository is yours, so play around with adding files, making commits, checking the logs until you're comfortable with the process. The whole point of git is to store your version control history, so we'll show you how to get to an older version of a file.
+
+If you've made changes to a file, and haven't committed the changes yet, you can use `git checkout -- <file>` where `<file>` is the name of the file whose changes you want to discard. Conveniently, when you modify a file, and run `git status`, git reminds you that `git checkout -- <file>` is the right way to discard changes.
+
+If you have committed a bunch of changes to a file, but want to go back to an earlier version of that file, you can use `git checkout <commit>` where `<commit>` identifies the particular commit. There are a few ways to specify the commit, but the easiest is to run `git log`, find the commit that you want to go back to and write down the first 5 or so letters and numbers in the id. You don't need to write down the whole thing. For instance, the first commit in this repository is `d5fd77`, so if I use `git checkout d5fd77`, git will reset everything back to the way it was when I made that commit (which is just the README.md) file.
